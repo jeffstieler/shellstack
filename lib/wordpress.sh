@@ -14,6 +14,7 @@ function install_wordpress_site {
         download_and_unzip_wordpress
         create_wordpress_database_user_and_tables $2 $3 $4 $1
         setup_wordpress_configuration $2 $3 $4
+        log "$5 $6 $7 $8 $9"
         trigger_wordpress_installation $5 $6 $7 $8 $9
 }
 
