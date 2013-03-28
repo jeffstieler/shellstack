@@ -61,7 +61,12 @@ function trigger_wordpress_installation {
         #$4 - WP admin email
         #$5 - Public Blog? 0 - no | 1 - yes
         log "Triggering WordPress instalation procedure... "
-	php -r "define( 'WP_SITEURL', 'http://$1'); define( 'WP_INSTALLING', true ); require_once( '/var/www/wordpress/wp-load.php' ); require_once( '/var/www/wordpress/wp-admin/includes/upgrade.php' ); require_once( '/var/www/wordpress/wp-includes/wp-db.php' ); wp_install('My WP Blog', '$2', '$4', $5, '', '$3');"
+        log "site url : $1"
+        log "admin    : $2"
+        log "pass     : $3"
+        log "email    : $4"
+        log "public   : $5"
+        php -r "define( 'WP_SITEURL', 'http://$1'); define( 'WP_INSTALLING', true ); require_once( '/var/www/wordpress/wp-load.php' ); require_once( '/var/www/wordpress/wp-admin/includes/upgrade.php' ); require_once( '/var/www/wordpress/wp-includes/wp-db.php' ); wp_install('My WP Blog', '$2', '$4', $5, '', '$3');"
 }
 
 function download_and_unzip_wp_cache_plugin {
