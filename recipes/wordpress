@@ -20,7 +20,6 @@ function defaults_wordpress {
 }
 
 function install_wordpress {
-	log "$MYSQL_ROOT_PASSWORD $WP_MYSQL_USERNAME $WP_MYSQL_PASSWORD $WP_DATABASE_NAME $WP_DOMAIN $WP_USERNAME $WP_PASSWORD $WP_EMAIL $WP_PUBLIC_BLOG"
 	install_basic
 	install_mysql $MYSQL_ROOT_PASSWORD && tune_mysql 40
 	install_memcached
